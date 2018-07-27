@@ -6,13 +6,13 @@ public class PlayerController : MonoBehaviour {
 
     float move;
     public float speed, jumpForce;
-    private Rigidbody rb;
+    private Rigidbody2D rb;
 
     private bool grounded;
 
 	// Use this for initialization
 	void Start () {
-        rb = this.GetComponent<Rigidbody>();
+        rb = this.GetComponent<Rigidbody2D>();
 	}
 	
 	// Update is called once per frame
@@ -21,18 +21,24 @@ public class PlayerController : MonoBehaviour {
 
         //rb.AddForce(new Vector3(move, 0, 0) * speed, ForceMode.Impulse);
 
-        rb.velocity = new Vector3(move * speed, rb.velocity.y, rb.velocity.z);
+        rb.velocity = new Vector3(move * speed, rb.velocity.y);
 
-        if(Input.GetButtonDown("Jump") && grounded) rb.AddForce(new Vector3(0, jumpForce, 0), ForceMode.Impulse);
+        if (Input.GetButtonDown("Jump") && grounded)
+        {
+            rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+        }
     }
 
-    private void OnCollisionStay(Collision collision)
+    private void OnCollisionStay2D(Collision2D collision)
     {
         GameObject other = collision.gameObject;
-        if (other.tag == "Ground") grounded = true;
+        if (other.tag == "Ground")
+        {
+            grounded = true;
+        }
     }
 
-    private void OnCollisionExit(Collision collision)
+    private void OnCollisionExit2D(Collision2D collision)
     {
         grounded = false;
     }
