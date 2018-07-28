@@ -396,9 +396,9 @@ GameObject:
   - component: {fileID: 1980085804}
   - component: {fileID: 1980085803}
   - component: {fileID: 1980085802}
-  - component: {fileID: 1980085801}
   - component: {fileID: 1980085800}
   - component: {fileID: 1980085806}
+  - component: {fileID: 1980085801}
   m_Layer: 0
   m_Name: 31Y6nTCi39L._SL500_AC_SS350_
   m_TagString: Player
@@ -431,18 +431,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.004824877, y: -0.004824877}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4, y: 3.74}
+    oldSize: {x: 3.2, y: 3.2}
     newSize: {x: 3.5, y: 3.5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.9728498, y: 3.72195}
+  m_Size: {x: 3.2, y: 3.2}
   m_EdgeRadius: 0
 --- !u!50 &1980085802
 Rigidbody2D:
@@ -499,7 +499,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 76974f1071fc3b2419165b8f0f4f6c3f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 40b35d9dce57b2445bcf2395788a7d76, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

@@ -21,6 +21,8 @@ public class PlayerController : MonoBehaviour {
 
         //rb.AddForce(new Vector3(move, 0, 0) * speed, ForceMode.Impulse);
 
+
+        // Changer pour un add force pour laisser le grappin marcher
         rb.velocity = new Vector3(move * speed, rb.velocity.y);
 
         if (Input.GetButtonDown("Jump") && grounded)
