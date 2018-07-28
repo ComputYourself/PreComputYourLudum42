@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 
+    Animator animator;
+
     float move;
     public float speed, jumpForce;
     private Rigidbody2D rb;
+
+
 
     private bool grounded;
 
 	// Use this for initialization
 	void Start () {
         rb = this.GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
@@ -20,10 +25,12 @@ public class PlayerController : MonoBehaviour {
         move = Input.GetAxis("Horizontal");
 
         //rb.AddForce(new Vector3(move, 0, 0) * speed, ForceMode.Impulse);
-
-
+        
         // Changer pour un add force pour laisser le grappin marcher
         rb.velocity = new Vector3(move * speed, rb.velocity.y);
+
+        if(move != 0)
+            animator.Play("Walk");
 
         if (Input.GetButtonDown("Jump") && grounded)
         {
